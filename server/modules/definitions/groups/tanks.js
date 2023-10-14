@@ -788,6 +788,29 @@ exports.masterBullet = {
         },
     ],
 };
+exports.recursionBullet = {
+    PARENT: ["trap"],
+    SHAPE: 0,
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "recursionBullet",
+                COLOR: 16,
+                LABEL: "",
+                STAT_CALCULATOR: 0,
+                WAIT_TO_CYCLE: false,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: false,
+                MAX_CHILDREN: 0,
+                ALT_FIRE: false,
+                NEGATIVE_RECOIL: false,
+
+            },
+        },
+    ],
+};
 
 exports.autoTankGun = {
     PARENT: ["genericTank"],
