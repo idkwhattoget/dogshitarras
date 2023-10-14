@@ -334,11 +334,33 @@ exports.hexagon = {
     },
     DRAW_HEALTH: true,
 };
+
 exports.shinyHexagon = makeRare(exports.hexagon, 0);
 exports.legendaryHexagon = makeRare(exports.hexagon, 1);
 exports.shadowHexagon = makeRare(exports.hexagon, 2);
 exports.rainbowHexagon = makeRare(exports.hexagon, 3);
 exports.transHexagon = makeRare(exports.hexagon, 4);
+
+
+exports.sexagon = {
+    PARENT: ["food"],
+    LABEL: "Sexagon",
+    VALUE: 5e7,
+    SHAPE: 6,
+    SIZE: 18,
+    COLOR: 0,
+    BODY: {
+        DAMAGE: 23 * basePolygonDamage,
+        DENSITY: 8,
+        HEALTH: 420 * basePolygonHealth,
+        RESIST: 1.3,
+        PENETRATION: 1.1,
+        ACCELERATION: 0.003
+    },
+    DRAW_HEALTH: true,
+};
+
+exports.rainbowSexagon = makeRare(exports.sexagon, 3);
 
 // 3D POLYGONS
 exports.sphereGlow = { BORDERLESS: true }
