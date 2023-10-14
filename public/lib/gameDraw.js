@@ -11,21 +11,30 @@ var gameDraw = {
         return parseInt(h, 16);
     }, // convert a hex value to decimal
     mixColors: (color_2, color_1, weight = 0.5) => {
-        if (weight === 1) return color_1;
-        if (weight === 0) return color_2;
-        var col = "#";
-        for (var i = 1; i <= 6; i += 2) {
-            // loop through each of the 3 hex pairs—red, green, and blue, skip the '#'
-            var v1 = gameDraw.hex2decimal(color_1.substr(i, 2)), // extract the current pairs
-                v2 = gameDraw.hex2decimal(color_2.substr(i, 2)),
-                // combine the current pairs from each source color, according to the specified weight
-                val = gameDraw.decimal2hex(Math.floor(v2 + (v1 - v2) * weight));
-            while (val.length < 2) {
-                val = "0" + val;
-            } // prepend a '0' if val results in a single digit
-            col += val; // concatenate val to our new color string
+        try {
+            if (weight === 1) return color_1;
+            if (weight === 0) return color_2;
+            var col = "#";
+            for (var i = 1; i <= 6; i += 2) {
+                // loop through each of the 3 hex pairs—red, green, and blue, skip the '#'
+                var v1 = gameDraw.hex2decimal(color_1.substr(i, 2)), // extract the current pairs
+                    v2 = gameDraw.hex2decimal(color_2.substr(i, 2)),
+                    // combine the current pairs from each source color, according to the specified weight
+                    val = gameDraw.decimal2hex(Math.floor(v2 + (v1 - v2) * weight));
+                while (val.length < 2) {
+                    val = "0" + val;
+                } // prepend a '0' if val results in a single digit
+                col += val; // concatenate val to our new color string
+            }
+            return col; // PROFIT!
+        } catch (err) {
+           /* console.log(`
+            --
+            ${color_2}
+            ${color_1}
+            --
+        `)*/
         }
-        return col; // PROFIT!
     },
     hslToRgb: (h, s, l) => {
         let r, g, b;
