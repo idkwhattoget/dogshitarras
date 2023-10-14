@@ -10,7 +10,7 @@ module.exports = {
 
     // Ticks per second. 1 is 30 tps, 2 is 60, etc.
     // Has physics side effecs.
-    gameSpeed: 1,
+    gameSpeed: 2,
 
     // How often to update the list of the entities players can see.
     // Has effects of when entities are activated.
@@ -117,7 +117,7 @@ module.exports = {
     LEVEL_CHEAT_CAP: 45,
 
     // Amount of player-bots to spawn.
-    BOTS: 8,
+    BOTS: 0,
 
     // How much XP player-bots get per second until they reach LEVEL_CAP.
     BOT_XP: 125,
